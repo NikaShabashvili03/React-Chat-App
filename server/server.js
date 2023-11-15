@@ -1,7 +1,7 @@
 import express from 'express';
 import { PrismaClient } from './prisma/generated-client/index.js'
 import { Server } from 'socket.io';
-import http from 'http';
+import http from 'https';
 import cors from 'cors';
 
 
