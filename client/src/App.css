@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.home__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__container > * {
+  margin-bottom: 10px;
+}
+
+.home__header {
+  margin-bottom: 30px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.username__input {
+  padding: 10px;
+  width: 50%;
+}
+
+.home__cta {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #1b10ad;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.chat {
+  width: 100%;
+  height: 100vh;
+}
+.chat__header {
+  margin: 30px 0 20px 0;
+}
+.chat__users > * {
+  margin-bottom: 10px;
+  color: #607eaa;
+  font-size: 14px;
+}
+
+.chat__mainHeader {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #9893e3;
+}
+.leaveChat__btn {
+  padding: 10px;
+  width: 150px;
+  border: none;
+  outline: none;
+  background-color: #d12d2d;
+  cursor: pointer;
+  color: #d7d2ea;
+}
+.message__container {
+  width: 100%;
+  height: 80vh;
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.message__container > * {
+  margin-bottom: 10px;
+}
+.chat__footer {
+  padding: 10px;
+  background-color: #9893e3;
+  height: 10vh;
+}
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.message {
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 15px;
+}
+.sendBtn {
+  width: 150px;
+  background-color: green;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #eae3d2;
+  cursor: pointer;
+}
+.sendBtn:hover {
+  background-color: rgb(129, 201, 129);
+}
+.message__recipient {
+  background-color: #f5ccc2;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.message__sender {
+  background-color: rgb(194, 243, 194);
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-size: 15px;
+}
+.message__chats > p {
+  font-size: 13px;
+}
+.sender__name {
+  text-align: right;
+}
+.message-typing {
+  font-style: italic;
+  font-size: 13px;
+  animation: 1s infinite;
+  animation-name: mymove;
+}
+
+@keyframes mymove {
+  0%{
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(2px);
+  }
+  100%{
+    transform: translateX(0px)
+  }
+}
+
+.trash{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.263);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trash__content{
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  position: relative;
+}
+
+.trash__exit{
+  position: absolute;
+  right: 5px;
+  top: 2px;
+}
+
+
+
+.trash__header{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.trash__header h2{
+  margin-bottom: 30px;
+  text-align: center;
+  color: rgba(0, 0, 79, 0.936);
+  padding: 10px;
+}
+
+.trash__header a {
+  color: black;
+  text-decoration: none;
+}
+
+.trash__body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 20%;
+}
+.trash__body h2{
+  font-size: 20px;
+  color: red;
+}
+
+.trash__footer{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trash__footer button {
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  background-color: blue;
+}
+.trash__footer button:hover {
+  color: blue;
+  border: 1px solid blue;
+  background-color: white;
+}
