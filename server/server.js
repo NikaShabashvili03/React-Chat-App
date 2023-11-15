@@ -1,16 +1,18 @@
 import express from 'express';
 import { PrismaClient } from './prisma/generated-client/index.js'
 import { Server } from 'socket.io';
+import http from 'http';
+import cors from 'cors';
+
 
 const prisma = new PrismaClient();
 
 const app = express();
 
+const server = http.createServer(app);
 
 
-const server = app.listen(5100, () => {
-  console.log('server running at port 5100');
-});
+app.use(cors);
 
 const io = new Server(server, {
   cors: {
@@ -60,4 +62,9 @@ io.on('connection', (socket) => {
     io.emit('newUserResponse', users);
     socket.disconnect();
   });
+});
+
+
+app.listen(5100, () => {
+  console.log('server running at port 5100');
 });
