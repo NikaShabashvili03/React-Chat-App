@@ -1,19 +1,23 @@
 import express from 'express';
-import { createServer } from 'node:http';
 import { PrismaClient } from './prisma/generated-client/index.js'
 import { Server } from 'socket.io';
 
 const prisma = new PrismaClient();
 
 const app = express();
-const server = createServer(app);
-const io = new Server(server, {
-    cors: {
-        origin: "https://825b0eef-268a-4938-be15-075379b514fa.netlify.app",
-        methods: ["GET", "POST"]
-    }
+
+
+
+const server = app.listen(5100, () => {
+  console.log('server running at port 5100');
 });
 
+const io = new Server(server, {
+  cors: {
+      origin: "https://825b0eef-268a-4938-be15-075379b514fa.netlify.app",
+      methods: ["GET", "POST"]
+  }
+});
 
 app.get("/api/message", async (req, res) => {
     const messages = await prisma.message.findMany();
@@ -55,8 +59,4 @@ io.on('connection', (socket) => {
     io.emit('newUserResponse', users);
     socket.disconnect();
   });
-});
-
-server.listen(5100, () => {
-  console.log('server running at port 5100');
 });
