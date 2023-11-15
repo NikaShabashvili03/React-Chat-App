@@ -1,19 +1,20 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Home from './components/Home';
 import ChatPage from './components/ChatPage';
 import { socket } from './socket';
 import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <div>
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<ChatPage socket={socket} />}></Route>
-          {/* <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
-        </Routes>
+          <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
+        </Routes> */}
+        <ChatPage socket={socket} />
       </div>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 

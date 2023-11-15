@@ -1,13 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { FaTrashAlt } from "react-icons/fa";
 
 const ChatBody = ({ messages, lastMessageRef, typingStatus, isTrashModalOpen, setTrashModalOpen }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleLeaveChat = () => {
     localStorage.removeItem('userName');
-    navigate('/');
+    // navigate('/');
     window.location.reload();
   };
 
