@@ -21,7 +21,7 @@ function TrashModal({
         //     mode: 'cors',
         //     cache: 'default',
         //   })
-        axios.post('api/message/delete').then(() => {
+        axios.post('https://reactchatapp-fnli.onrender.com/api/message/delete').then(() => {
             console.log('all message has been deleted')
         })
     }else{

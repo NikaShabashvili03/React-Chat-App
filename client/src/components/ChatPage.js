@@ -21,7 +21,7 @@ const ChatPage = ({ socket }) => {
     //    });
     //   }
     // )
-    axios.get("api/message").then(function (response) {
+    axios.get("https://reactchatapp-fnli.onrender.com/api/message").then(function (response) {
       setMessages(response.data);
       window.scrollTo({
               top: 0,
