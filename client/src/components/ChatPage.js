@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import ChatBody from './ChatBody';
 import ChatFooter from './ChatFooter';
 import TrashModal from './TrashModal';
+import axios from 'axios';
 
 const ChatPage = ({ socket }) => {
   const [messages, setMessages] = useState([]);
@@ -10,16 +11,23 @@ const ChatPage = ({ socket }) => {
   const [isTrashModalOpen, setTrashModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch("https://reactchatapp-fnli.onrender.com/api/message").then(
-      response => response.json()
-    ).then((data) => {
-        setMessages(data)
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-       });
-      }
-    )
+    // fetch("api/message").then(
+    //   response => response.json()
+    // ).then((data) => {
+    //     setMessages(data)
+    //     window.scrollTo({
+    //       top: 0,
+    //       behavior: 'smooth',
+    //    });
+    //   }
+    // )
+    axios.get("api/message").then(function (response) {
+      setMessages(response.data);
+      window.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+      });
+    });
   }, [socket, messages])
 
   useEffect(() => {

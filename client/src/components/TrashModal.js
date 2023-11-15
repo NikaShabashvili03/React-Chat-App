@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { IoIosExit } from "react-icons/io";
 import PinInput from "react-pin-input";
@@ -14,12 +15,15 @@ function TrashModal({
     e.preventDefault();
     if(pinInput === '64531'){
         setTrashModalOpen(!isTrashModalOpen);
-        fetch('https://reactchatapp-fnli.onrender.com/api/message/delete', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            mode: 'cors',
-            cache: 'default',
-          })
+        // fetch('https://reactchatapp-fnli.onrender.com/api/message/delete', {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     mode: 'cors',
+        //     cache: 'default',
+        //   })
+        axios.post('api/message/delete').then(() => {
+            console.log('all message has been deleted')
+        })
     }else{
         setPinAlert(true)
     }
