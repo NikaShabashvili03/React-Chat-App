@@ -19,6 +19,7 @@ const io = new Server(server, {
   }
 });
 
+
 app.get("/api/message", async (req, res) => {
     const messages = await prisma.message.findMany();
     res.status(200).send(messages);
