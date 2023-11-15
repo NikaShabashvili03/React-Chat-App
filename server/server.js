@@ -9,7 +9,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://main--classy-malabi-3aab9f.netlify.app",
+        origin: "https://classy-malabi-3aab9f.netlify.app",
         methods: ["GET", "POST"]
     }
 });
