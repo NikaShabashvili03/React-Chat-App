@@ -15,7 +15,7 @@ function TrashModal({
     e.preventDefault();
     if(pinInput === '64531'){
         setTrashModalOpen(!isTrashModalOpen);
-        axios.post('https://reactchatapp-fnli.onrender.com/api/message/delete').then(() => {
+        axios.post('https://reactchatapp-hjqg.onrender.com/api/message/delete').then(() => {
             console.log('all message has been deleted')
         })
     }else{
