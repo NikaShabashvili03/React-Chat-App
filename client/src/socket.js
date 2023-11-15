@@ -1,5 +1,6 @@
 import { io } from 'socket.io-client';
 
-const URL = "https://reactchatapp-jg1f.onrender.com";
+// "undefined" means the URL will be computed from the `window.location` object
+const URL = "https://reactchatapp-fnli.onrender.com";
 
 export const socket = io(URL);
