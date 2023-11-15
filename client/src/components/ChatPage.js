@@ -10,7 +10,7 @@ const ChatPage = ({ socket }) => {
   const [isTrashModalOpen, setTrashModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch("api/message").then(
+    fetch("https://reactchatapp-fnli.onrender.com/api/message").then(
       response => response.json()
     ).then((data) => {
         setMessages(data)

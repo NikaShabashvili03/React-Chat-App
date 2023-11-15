@@ -14,7 +14,7 @@ function TrashModal({
     e.preventDefault();
     if(pinInput === '64531'){
         setTrashModalOpen(!isTrashModalOpen);
-        fetch('api/message/delete', {
+        fetch('https://reactchatapp-fnli.onrender.com/api/message/delete', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             mode: 'cors',
