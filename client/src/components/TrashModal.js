@@ -12,7 +12,7 @@ function TrashModal({
 
   const handleClick = (e) => {
     e.preventDefault();
-    if(pinInput == 64531){
+    if(pinInput === '64531'){
         setTrashModalOpen(!isTrashModalOpen);
         fetch('api/message/delete', {
             method: 'POST',
