@@ -16,7 +16,7 @@ app.use(cors);
 
 const io = new Server(server, {
   cors: {
-      origin: "http://localhost:3000",
+      origin: "http://classy-malabi-3aab9f.netlify.app",
       methods: ["GET", "POST"]
   }
 });
