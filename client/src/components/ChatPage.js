@@ -13,16 +13,16 @@ const ChatPage = ({ socket }) => {
   useEffect(() => {
     axios.get("https://reactchatapp-hjqg.onrender.com/api/message").then(function (response) {
       setMessages(response.data);
-      window.scrollTo({
-              top: 0,
-              behavior: 'smooth',
-      });
+      // window.scrollTo({
+      //         top: 0,
+      //         behavior: 'smooth',
+      // });
     });
   }, [socket, messages])
 
-  useEffect(() => {
-    lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
-  },[messages])
+  // useEffect(() => {
+  //   lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
+  // },[messages])
 
 
   useEffect(() => {
