@@ -9,7 +9,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://main--classy-malabi-3aab9f.netlify.app",
         methods: ["GET", "POST"]
     }
 });
@@ -58,5 +58,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(5100, () => {
-  console.log('server running at http://localhost:5100');
+  console.log('server running at port 5100');
 });
