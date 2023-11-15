@@ -18,11 +18,13 @@ const io = new Server(server, {
 
 
 app.get("/api/message", async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     const messages = await prisma.message.findMany();
     res.status(200).send(messages);
 })
 
 app.post("/api/message/delete", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const messages = await prisma.message.deleteMany();
   res.status(200).send(messages);
 })
