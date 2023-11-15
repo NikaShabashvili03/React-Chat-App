@@ -14,7 +14,7 @@ const server = https.createServer(app);
 
 const PORT = process.env.PORT || 5100
 
-app.use(cors);
+
 
 const io = new Server(server, {
   cors: {
