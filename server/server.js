@@ -14,7 +14,7 @@ const server = app.listen(5100, () => {
 
 const io = new Server(server, {
   cors: {
-      origin: "https://825b0eef-268a-4938-be15-075379b514fa.netlify.app",
+      origin: "http://localhost:3000",
       methods: ["GET", "POST"]
   }
 });
