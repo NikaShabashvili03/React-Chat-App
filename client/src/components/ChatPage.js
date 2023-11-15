@@ -11,16 +11,6 @@ const ChatPage = ({ socket }) => {
   const [isTrashModalOpen, setTrashModalOpen] = useState(false);
 
   useEffect(() => {
-    // fetch("api/message").then(
-    //   response => response.json()
-    // ).then((data) => {
-    //     setMessages(data)
-    //     window.scrollTo({
-    //       top: 0,
-    //       behavior: 'smooth',
-    //    });
-    //   }
-    // )
     axios.get("https://reactchatapp-fnli.onrender.com/api/message").then(function (response) {
       setMessages(response.data);
       window.scrollTo({
